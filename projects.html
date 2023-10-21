@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="titleprojects">Projects | Abhishek Jain</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto Mono"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="background.css" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body>
+    <div class="headermaindiv" id="headermaindiv">
+      <div class="headerimagediv">
+        <img
+          src="aj-blacklogo.jpg"
+          alt="Abhishek Jain"
+          class="abhisheklogoimage"
+        />
+      </div>
+      <div class="headerlinksdiv" id="headerlinksdiv">
+        <div class="linksdiv">
+          <nav>
+            <a
+              href="index.html#page1"
+              class="headerlink"
+              id="hlink1"
+              onclick="closeheader()"
+              >// home <sup>01</sup>
+            </a>
+            <a
+              href="index.html#page3"
+              class="headerlink"
+              id="hlink2"
+              onclick="closeheader()"
+              >// about <sup>02</sup></a
+            >
+            <a
+              href="index.html#page6"
+              class="headerlink"
+              id="hlink3"
+              onclick="closeheader()"
+              >// project <sup>03</sup></a
+            >
+            <a
+              href="hiremepage.html"
+              class="headerlink"
+              id="hlink4"
+              onclick="closeheader()"
+              >// hire me <sup>04</sup></a
+            >
+            <a
+              href="index.html#page7"
+              class="headerlink"
+              id="hlink5"
+              onclick="closeheader()"
+              >// contact <sup>05</sup></a
+            >
+
+            <div class="animation start-home"></div>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkbox" id="checkbox">
+      <label class="hamburger" onclick="navigation()">
+        <input type="checkbox" id="checkcheckbox" />
+        <svg viewBox="0 0 32 32">
+          <path
+            class="line line-top-bottom"
+            d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+          ></path>
+          <path class="line" d="M7 16 27 16"></path>
+        </svg>
+      </label>
+    </div>
+
+    <div class="page1project">
+      <div class="projectimage" id="projectimage">
+        <div class="projectimageimg" id="projectimageimg"></div>
+      </div>
+      <div class="projectdesc" id="projectdesc">
+        <div class="projecthead" id="projecthead"></div>
+        <div class="projecttype" id="projecttype"></div>
+        <div class="projectdesctext" id="projectdesctext"></div>
+        <div class="buttonproject">
+          <button
+            class="visitprojectbutton"
+            id="visitprojectbutton"
+            onclick="window.location.assign(localStorage.getItem('link'))"
+          >
+            Visit Project
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      function updateproject() {
+        let funclink = localStorage.getItem('func');
+        let backglink = "url('" + localStorage.getItem('back') + "')";
+        document.getElementById('projecthead').innerText =
+          localStorage.getItem('title');
+        document.getElementById('projecttype').innerText =
+          localStorage.getItem('subtitle');
+        document.getElementById('projectdesctext').innerText =
+          localStorage.getItem('maindesc');
+        document.getElementById('projectimageimg').style.backgroundImage =
+          backglink;
+        document.getElementById('titleprojects').innerText =
+          localStorage.getItem('headtitle');
+      }
+      updateproject();
+    </script>
+  </body>
+</html>
